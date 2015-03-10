@@ -1,6 +1,8 @@
 # common_cartridge
 A gem for the parsing of IMS Common Cartridge bundles.
 
+![alt tag](https://raw.github.com/instructure/common_cartridge/master/common_cartridge.png)
+
 ## Usage
 
 CommonCartridge transforms the XML contained in a Common Cartridge zip file into a nested object representation.
