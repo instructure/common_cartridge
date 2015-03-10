@@ -3,7 +3,7 @@ lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |spec|
-  spec.name          = "common cartridge"
+  spec.name          = "common_cartridge"
   spec.version       = "1.0.0"
   spec.authors       = ["Josh Simpson"]
   spec.email         = ["jsimpson@instructure.com"]
