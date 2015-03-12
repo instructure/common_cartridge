@@ -5,7 +5,7 @@ A gem for the parsing of IMS Common Cartridge bundles.
 
 ## Usage
 
-CommonCartridge transforms the XML contained in a Common Cartridge zip file into a nested object representation.
+common_cartridge transforms the XML contained in a Common Cartridge zip file into a nested object representation.
 
 ``` ruby
 require 'common_cartridge'
@@ -37,7 +37,7 @@ xml = File.open('imsmanifest.xml').read
 CommonCartridge::Parser.parse(xml)
 ```
 
-You can configure cartridge as well.
+You can configure common_cartridge as well.
 
 ``` ruby
 CommonCartridge.configure do |c|
