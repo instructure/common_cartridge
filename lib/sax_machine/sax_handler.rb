@@ -1,6 +1,5 @@
 module SAXMachine
-  class SAXHandler
-
+  module SAXAbstractHandler
     # Not a great solution; will be solved gracefully with CNVS-13964
     remove_method :normalize_name
     def normalize_name(name)
@@ -10,4 +9,3 @@ module SAXMachine
     end
   end
 end
-
