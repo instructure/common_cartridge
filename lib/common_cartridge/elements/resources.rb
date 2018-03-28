@@ -4,6 +4,7 @@ require 'common_cartridge/elements/resources/topic'
 require 'common_cartridge/elements/resources/assignment'
 require 'common_cartridge/elements/resources/assessment'
 require 'common_cartridge/elements/resources/page'
+require 'common_cartridge/elements/resources/basic_lti_link'
 
 module CommonCartridge
   module Elements
@@ -15,7 +16,8 @@ module CommonCartridge
        WebLink.pattern =>  WebLink,
        Assignment.pattern => Assignment,
        Assessment.pattern => Assessment,
-       Page.pattern => Page
+       Page.pattern => Page,
+       BasicLTILink.pattern => BasicLTILink
       }
     end
 
