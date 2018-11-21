@@ -1,5 +1,4 @@
 require 'sax-machine'
-require 'sax_machine/sax_handler'
 
 module CommonCartridge
   def self.parse_from_zip(zipfile)
