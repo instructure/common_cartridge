@@ -18,6 +18,12 @@ module CommonCartridge
         def value; strings.first.value; end
         def language; strings.first.language; end
 
+        def values
+          strings.map do |str|
+            [str.language, str.value]
+          end.to_h
+        end
+
         def to_s; string; end
       end
 
