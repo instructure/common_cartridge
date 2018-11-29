@@ -6,6 +6,13 @@ module CommonCartridge
 
         include SAXMachine
 
+        attribute :xmlns
+        attribute 'xmlns:blti', as: :xmlns_blti
+        attribute 'xmlns:lticm', as: :xmlns_lticm
+        attribute 'xmlns:lticp', as: :xmlns_lticp
+        attribute 'xmlns:xsi', as: :xmlns_xsi
+        attribute 'xsi:schemaLocation', as: :xsi_schema_location
+
         element :title
         element :description
         element :secure_launch_url
