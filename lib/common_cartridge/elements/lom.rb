@@ -1,11 +1,22 @@
 module CommonCartridge
   module Elements
     module Lom
+      class LanguageString
+        include SAXMachine
+
+        attribute :language
+        value :value
+      end
+
       class Title
         include SAXMachine
 
-        element 'lomimscc:string', as: :value
-        element 'lomimscc:string', value: :language, as: :language
+        # http://www.imsglobal.org/profile/cc/ccv1p3/LOM/ccv1p3_lommanifest_v1p0.xsd
+        elements 'lomimscc:string', as: :strings, class: CommonCartridge::Elements::Lom::LanguageString
+
+        # backward compatibility
+        def value; strings.first.value; end
+        def language; strings.first.language; end
 
         def to_s; string; end
       end
