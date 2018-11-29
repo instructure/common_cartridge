@@ -4,8 +4,8 @@ module CommonCartridge
       class Title
         include SAXMachine
 
-        element :string, as: :value
-        element :string, value: :language, as: :language
+        element 'lomimscc:string', as: :value
+        element 'lomimscc:string', value: :language, as: :language
 
         def to_s; string; end
       end
@@ -13,8 +13,8 @@ module CommonCartridge
       class Description
         include SAXMachine
 
-        element :string, as: :value
-        element :string, value: :language, as: :language
+        element 'lomimscc:string', as: :value
+        element 'lomimscc:string', value: :language, as: :language
 
         def to_s; string; end
       end
@@ -22,8 +22,8 @@ module CommonCartridge
       class Keyword
         include SAXMachine
 
-        element :string, as: :value
-        element :string, value: :language, as: :language
+        element 'lomimscc:string', as: :value
+        element 'lomimscc:string', value: :language, as: :language
 
         def to_s; string; end
       end
@@ -37,22 +37,22 @@ module CommonCartridge
       class Rights
         include SAXMachine
 
-        element :description, class: CommonCartridge::Elements::Lom::Description
+        element 'lomimscc:description', as: :description, class: CommonCartridge::Elements::Lom::Description
         element :copyrightAndOtherRestrictions, class: CommonCartridge::Elements::Lom::CopyrightAndOtherRestrictions
       end
 
       class General
         include SAXMachine
 
-        element :title, class: CommonCartridge::Elements::Lom::Title
-        element :description, class: CommonCartridge::Elements::Lom::Description
-        elements :keyword, as: :keywords, class: CommonCartridge::Elements::Lom::Keyword
+        element 'lomimscc:title', as: :title, class: CommonCartridge::Elements::Lom::Title
+        element 'lomimscc:description', as: :description, class: CommonCartridge::Elements::Lom::Description
+        elements 'lomimscc:keyword', as: :keywords, class: CommonCartridge::Elements::Lom::Keyword
       end
 
       class Lom
         include SAXMachine
 
-        element :general, class: CommonCartridge::Elements::Lom::General
+        element 'lomimscc:general', as: :general, class: CommonCartridge::Elements::Lom::General
         element :rights, class: CommonCartridge::Elements::Lom::Rights
       end
     end

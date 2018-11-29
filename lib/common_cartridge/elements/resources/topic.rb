@@ -6,10 +6,10 @@ module CommonCartridge
 
         include SAXMachine
 
-        element :title
-        element :text
-        element :text, value: :texttype, as: :text_type
-        element :attachments, class: Attachments::RootAttachment, as: :attachment_root
+        element 'dt:title', as: :title
+        element 'dt:text', as: :text
+        element 'dt:text', value: :texttype, as: :text_type
+        element 'dt:attachments', class: Attachments::RootAttachment, as: :attachment_root
 
         def attachments
           attachment_root.attachments
