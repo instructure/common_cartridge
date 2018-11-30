@@ -17,7 +17,7 @@ module CommonCartridge
        Assignment.pattern => Assignment,
        Assessment.pattern => Assessment,
        Page.pattern => Page,
-       BasicLTILink.pattern => BasicLTILink
+       BasicLtiLink::BasicLtiLink.pattern => BasicLtiLink::BasicLtiLink
       }
     end
 
