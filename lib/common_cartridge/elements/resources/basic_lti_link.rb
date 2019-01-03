@@ -18,6 +18,20 @@ module CommonCartridge
           element 'lticp:contact', class: VendorContact, as: :contact
         end
 
+        class ExtensionProperty
+          include SAXMachine
+
+          attribute :name
+          value :value
+        end
+
+        class Extension
+          include SAXMachine
+
+          attribute :platform
+          elements 'lticm:property', class: ExtensionProperty, as: :properties
+        end
+
         class BasicLtiLink
           attr_accessor :identifier
 
@@ -33,7 +47,10 @@ module CommonCartridge
           element 'blti:title', as: :title
           element 'blti:description', as: :description
           element 'blti:secure_launch_url', as: :secure_launch_url
+          element 'blti:launch_url', as: :launch_url
           element 'blti:vendor', class: Vendor, as: :vendor
+
+          elements 'blti:extensions', class: Extension, as: :extensions
 
           def self.type
             :basic_lti_link
