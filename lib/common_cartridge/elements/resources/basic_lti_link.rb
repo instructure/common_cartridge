@@ -57,7 +57,7 @@ module CommonCartridge
           end
 
           def self.pattern
-            /imsbasiclti_xmlv1p0/
+            /imsbasiclti_xmlv1p/
           end
         end
       end
