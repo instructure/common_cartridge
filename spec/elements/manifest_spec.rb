@@ -22,6 +22,10 @@ module CommonCartridge
       it "has resources" do
         expect(@manifest.root_resource).to be_kind_of(CommonCartridge::Elements::Resources::RootResource)
       end
+
+      it "has identifier" do
+        expect(@manifest.identifier).to eq('if33b9cbc13c56657b05bec722d30b84f')
+      end
     end
   end
 end

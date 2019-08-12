@@ -6,7 +6,7 @@ module CommonCartridge
       element :schema
       element :schemaversion
 
-      element :lom, class: CommonCartridge::Elements::Lom::Lom
+      element 'lomimscc:lom', as: :lom, class: CommonCartridge::Elements::Lom::Lom
     end
   end
 end

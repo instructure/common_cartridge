@@ -12,7 +12,7 @@ module CommonCartridge
         class RootAttachment
           include SAXMachine
 
-          elements :attachment, class: Attachment, as: :attachments
+          elements :'dt:attachment', class: Attachment, as: :attachments
         end
       end
     end

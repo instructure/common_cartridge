@@ -17,8 +17,6 @@ module CommonCartridge
         include SAXMachine
 
         attribute :identifier
-        attribute :identifierref
-
         elements :item, class: Item, as: :items
 
         # todo: implement 'find_by' method here to quickly scan for particular items

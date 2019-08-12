@@ -9,6 +9,12 @@ require 'common_cartridge/parsers/items'
 module CommonCartridge
   module Parsers
     class Parser
+      class ManifestDocument
+        include SAXMachine
+
+        element :manifest, class: CommonCartridge::Elements::Manifest, required: true
+      end
+
       def self.use_file(zipfile, path)
         Zip::File.open(File.join(CommonCartridge.config.import_directory, zipfile)) do |file|
           f = file.glob(path).first
@@ -25,7 +31,7 @@ module CommonCartridge
 
       def parse
         Parser.use_file(@zipfile, 'imsmanifest.xml') do |xml|
-          @package.manifest = CommonCartridge::Elements::Manifest.parse(xml)
+          @package.manifest = ManifestDocument.parse(xml).manifest
         end
 
         parse_content!
